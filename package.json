@@ -12,7 +12,6 @@
   "dependencies": {
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
-    "jodit": "^3.16.5",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
