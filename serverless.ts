@@ -14,6 +14,7 @@ const serverlessConfiguration: AWS = {
   ],
   provider: {
     name: 'aws',
+    stage: 'dev',
     runtime: 'nodejs14.x',
     apiGateway: {
       minimumCompressionSize: 1024,
@@ -26,6 +27,7 @@ const serverlessConfiguration: AWS = {
       GUESTS_DB_USER: '${param:GUESTS_DB_USER}',
       GUESTS_DB_PWD: '${param:GUESTS_DB_PWD}',
       GUESTS_DB_NAME: '${param:GUESTS_DB_NAME}',
+      MY_ENV: '${param:MY_ENV}'
     },
   },
   // import the function via paths
@@ -42,6 +44,7 @@ const serverlessConfiguration: AWS = {
       platform: 'node',
       concurrency: 10,
     },
+    stage_name: '${opt: stage, self: provider.stage}'
   },
 };
 
