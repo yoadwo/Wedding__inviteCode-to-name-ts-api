@@ -1,6 +1,7 @@
+// in case in the future need to apply headers,
+// this is where and how
 const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true
+    
 }
 
 export const apiResponses = {
@@ -8,21 +9,21 @@ export const apiResponses = {
         return {
             statusCode: 200,
             body: JSON.stringify(body, null, 2),
-            headers
+            // headers
         }
     },
     _400: (body: {[key: string]: any}) => {
         return {
             statusCode: 400,
             body: JSON.stringify(body, null, 2),
-            headers
+            // headers
         }
     },
     _500: (body: {[key: string]: any}) => {
         return {
             statusCode: 500,
             body: JSON.stringify(body, null, 2),
-            headers
+            // headers
         }
     },
 }

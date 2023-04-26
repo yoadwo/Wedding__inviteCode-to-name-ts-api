@@ -26,6 +26,7 @@ const serverlessConfiguration: AWS = {
       GUESTS_DB_USER: '${param:GUESTS_DB_USER}',
       GUESTS_DB_PWD: '${param:GUESTS_DB_PWD}',
       GUESTS_DB_NAME: '${param:GUESTS_DB_NAME}',
+      CORS_ORIGINS: '${param:CORS_ORIGINS}' // comma seprated string, may contains spaces
     },
   },
   // import the function via paths
