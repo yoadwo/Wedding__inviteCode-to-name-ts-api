@@ -1,7 +1,7 @@
 import { handlerPath } from '@libs/handler-resolver';
 
-// using cors middleware in middy,
-// so no need to declare cors
+// 1. this must be used in addition with middy plugin
+// 2. when running locally, use deploy with --param flag to overwrite
 export default {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
@@ -9,6 +9,9 @@ export default {
       http: {
         method: 'get',
         path: 'invite_code/{code}',
+        cors: {
+          origin: '${param:CORS_ORIGINS}'
+        }
       }
     },
   ],
