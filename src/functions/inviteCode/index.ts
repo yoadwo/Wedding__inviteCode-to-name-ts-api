@@ -11,7 +11,8 @@ export default {
         path: 'invite_code/{code}',
         cors: {
           origin: '${param:CORS_ORIGINS}'
-        }
+        },
+        private: true
       }
     },
   ],
