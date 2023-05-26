@@ -21,7 +21,7 @@ export const getGuestName: APIGatewayProxyHandler = async (event) => {
 
     try {
         const guests: guestEM[] = await db.query(
-            "select firstName from guests where phoneNumberHash = ?", [code]);
+            `select recipient from ${process.env.GUESTS_DB_TABLE} where phoneNumberHash = ?`, [code]);
         console.log('invitecode ', guests);
         if (guests.length == 0){
             return apiResponses._400({err: "no such guest matches invitation code"});

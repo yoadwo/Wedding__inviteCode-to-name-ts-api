@@ -29,6 +29,7 @@ const serverlessConfiguration: AWS = {
       GUESTS_DB_USER: '${param:GUESTS_DB_USER}',
       GUESTS_DB_PWD: '${param:GUESTS_DB_PWD}',
       GUESTS_DB_NAME: '${param:GUESTS_DB_NAME}',
+      GUESTS_DB_TABLE: '${param:GUESTS_DB_TABLE, "guests"}',
       CORS_ORIGINS: '${param:CORS_ORIGINS}' // override with --param for localhost
     },
   },
