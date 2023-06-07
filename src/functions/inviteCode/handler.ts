@@ -12,6 +12,7 @@ import { guestEM } from 'src/models/guestEM';
 
 export const getGuestName: APIGatewayProxyHandler = async (event) => {
     const code = event.pathParameters?.code;
+    console.log('event invite code: ' + code);
 
     const db = makeDb();
 
@@ -22,10 +23,12 @@ export const getGuestName: APIGatewayProxyHandler = async (event) => {
     try {
         const guests: guestEM[] = await db.query(
             `select recipient from ${process.env.GUESTS_DB_TABLE} where phoneNumberHash = ?`, [code]);
-        console.log('invitecode ', guests);
+        console.log('guest name: ', guests);
         if (guests.length == 0){
+            console.warn('guest not found');
             return apiResponses._400({err: "no such guest matches invitation code"});
         } else if (guests.length > 1){
+            console.warn('multiple records found');
             return apiResponses._500({err: "too many records were found"});
         } else {
             return apiResponses._200(guests[0]);
