@@ -10,9 +10,9 @@
     "node": ">=14.15.0"
   },
   "dependencies": {
-    "@middy/core": "^3.4.0",
-    "@middy/http-cors": "^4.3.1",
-    "@middy/http-json-body-parser": "^3.4.0",
+    "@middy/core": "^4.4.1",
+    "@middy/http-cors": "^4.4.1",
+    "@middy/http-json-body-parser": "^4.4.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
